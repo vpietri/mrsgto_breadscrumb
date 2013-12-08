@@ -1,4 +1,4 @@
 mrsgto_breadscrumb
 ==================
 
-Keep track of navigation for a realistic breadscumb
+Module to extend magento breadscrumb to keep user's navigation track through categories facets and search results 
