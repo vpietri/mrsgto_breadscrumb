@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Mrsgto_Breadscrumb>
+            <version>0.1.0.0.0</version>
+        </Mrsgto_Breadscrumb>
+    </modules>
+    <global>
+        <helpers>
+            <mrsgto_breadscrumb>
+                <class>Mrsgto_Breadscrumb_Helper</class>
+            </mrsgto_breadscrumb>
+        </helpers>
+        <events>
+            <catalog_controller_product_init>
+                <observers>
+                    <core_breadscrumb>
+                        <class>Mrsgto_Breadscrumb_Model_Observer</class>
+                        <method>checkProductBreadSrumb</method>
+                    </core_breadscrumb>
+                </observers>
+            </catalog_controller_product_init>
+              <core_block_abstract_prepare_layout_before>
+                <observers>
+                    <core_breadscrumb_search>
+                        <class>Mrsgto_Breadscrumb_Model_Observer</class>
+                        <method>alterProductSearchBreadSrumb</method>
+                    </core_breadscrumb_search>
+                </observers>
+            </core_block_abstract_prepare_layout_before>
+            
+            <core_block_abstract_prepare_layout_after>
+                 <observers>
+                    <core_breadscrumb_search>
+                        <class>Mrsgto_Breadscrumb_Model_Observer</class>
+                        <method>alterSearchBreadSrumb</method>
+                    </core_breadscrumb_search>
+                </observers>
+            </core_block_abstract_prepare_layout_after>
+            
+        </events>
+    </global>
+</config>
